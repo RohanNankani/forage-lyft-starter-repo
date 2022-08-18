@@ -3,6 +3,7 @@ from car import Car
 from engines.capuletEngine import CapuletEngine
 from engines.sternmanEngine import SternmanEngine
 from engines.willoughbyEngine import WilloughbyEngine
+from batteries.nubbinBattery import NubbinBattery
 
 
 class CarFactory:
@@ -26,13 +27,13 @@ class CarFactory:
 
     def create_rorshach(self, current_date, last_service_date, current_mileage, last_service_mileage):
         willoughbyEngine = WilloughbyEngine(current_mileage, last_service_mileage)
-        nubbinBattery = nubbinBattery(last_service_date, current_date)
+        nubbinBattery = NubbinBattery(last_service_date, current_date)
         car = Car(willoughbyEngine, nubbinBattery)
         return car
 
     def create_thovex(self, current_date, last_service_date, current_mileage, last_service_mileage):
         capuletEngine = CapuletEngine(current_mileage, last_service_mileage)
-        nubbinBattery = nubbinBattery(last_service_date, current_date)
+        nubbinBattery = NubbinBattery(last_service_date, current_date)
         car = Car(capuletEngine, nubbinBattery)
         return car 
     
